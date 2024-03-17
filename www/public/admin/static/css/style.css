@@ -1,0 +1,190 @@
+.form-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.form-row .no-gap {
+    gap: 0;
+}
+.form-col {
+    flex: 1;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.form-col:has(.form-image) {
+    flex: 0;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.form-group label {
+    font-weight: bold;
+    font-size: 14px;
+}
+.form-group .help-block {
+    font-weight: bold;
+    color: var(--main-red-color);
+}
+
+.form-image {
+    width: 200px;
+    height: 200px;
+}
+.form-image .help-block {
+    margin-top: 10px;
+    text-align: center;
+}
+.form-image:has(input[aria-invalid=true]) .preview {
+    border: 1px solid var(--main-red-color);
+}
+.form-image .preview {
+    border-radius: var(--main-border-radius) !important;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--main-gray-color);
+}
+.form-image .preview img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.form-image .preview img[src=""] {
+    height: auto;
+}
+.form-image .preview .preview-placeholder {
+    background-color: var(--light-gray-color);
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    color: var(--main-gray-color);
+    font-weight: bold;
+}
+.form-image .preview .preview-placeholder i {
+    font-size: 74px;
+}
+.form-image .preview .preview-placeholder:hover {
+    opacity: 0.7;
+}
+.form-image .preview .form-image-actions {
+    display: none;
+    padding: 10px;
+    position: absolute;
+    z-index: 3;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(228, 228, 228, 0.5);
+    backdrop-filter: blur(20px);
+    transition: bottom 0.3s ease;
+}
+.form-image .preview .form-image-actions.active {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.form-image .preview .form-image-actions i[class="icon-trash"]:hover {
+    cursor: pointer;
+    color: var(--main-red-color);
+}
+.form-image .preview .loader {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(2px);
+    z-index: 999;
+    inset: 0;
+}
+.form-image .preview .loader.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-image .preview .loader span {
+    width: 48px;
+    height: 48px;
+    border: 5px solid var(--main-gray-color);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+.form-image .preview:hover .form-image-actions {
+    bottom: 0;
+}
+.form-image .form-group input[type="file"] {
+    display: none;
+}
+
+.wrapper {
+    height: 100%;
+}
+
+.wrapper-content {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    height: 100%;
+    margin-top: 54px;
+}
+
+.header {
+    position: fixed;
+    height: 54px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: white;
+    padding: 10px 20px;
+    -webkit-box-shadow: 0px 7px 8px -2px rgba(34, 60, 80, 0.21);
+    -moz-box-shadow: 0px 7px 8px -2px rgba(34, 60, 80, 0.21);
+    box-shadow: 0px 7px 8px -2px rgba(34, 60, 80, 0.21);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    margin: 20px;
+    background-color: white;
+    height: 100%;
+    width: max-content;
+    flex: 1;
+}
+
+.sidebar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--sidebar-color);
+    padding: 20px;
+    overflow-x: auto;
+    height: 100%;
+    width: max-content;
+}
+
+

@@ -1,0 +1,55 @@
+networks:
+  yii:
+    name: yii
+
+
+services:
+  nginx:
+    container_name: yii_nginx
+    image: nginx:latest
+    ports:
+      - 80:80
+    volumes:
+      - ./www:/var/www
+      - ./vhost.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - yii
+    depends_on:
+      - php
+
+  php:
+    container_name: yii_php
+    build: ./images/php82fpm
+    volumes:
+      - ./www:/var/www
+      - ./php.ini:/usr/local/etc/php/conf.d/php.ini
+    networks:
+      - yii
+    depends_on:
+      - pgsql
+
+  pgsql:
+    container_name: yii_pgsql
+    image: postgres:alpine
+    volumes:
+      - db_data:/var/lib/postgresql/data:rw
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    networks:
+      - yii
+
+  adminer:
+    container_name: adminer
+    image: adminer
+    ports:
+      - 8080:8080
+    depends_on:
+      - pgsql
+    networks:
+      - yii
+
+volumes:
+  db_data:
+
