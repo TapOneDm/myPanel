@@ -24,6 +24,63 @@ class m130524_201442_init extends Migration
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
         ], $tableOptions);
+
+        $this->execute('drop table if exists "auth_assignment";');
+        $this->execute('drop table if exists "auth_item_child";');
+        $this->execute('drop table if exists "auth_item";');
+        $this->execute('drop table if exists "auth_rule";');
+        
+        $this->execute('
+            create table "auth_rule"
+            (
+                "name"  varchar(64) not null,
+                "data"  bytea,
+                "created_at"           integer,
+                "updated_at"           integer,
+                primary key ("name")
+            );
+        ');
+
+        $this->execute('
+            create table "auth_item"
+            (
+            "name"                 varchar(64) not null,
+            "type"                 smallint not null,
+            "description"          text,
+            "rule_name"            varchar(64),
+            "data"                 bytea,
+            "created_at"           integer,
+            "updated_at"           integer,
+            primary key ("name"),
+            foreign key ("rule_name") references "auth_rule" ("name") on delete set null on update cascade
+            );
+        ');
+
+        $this->execute('create index auth_item_type_idx on "auth_item" ("type");');
+
+        $this->execute('
+            create table "auth_item_child"
+            (
+            "parent"               varchar(64) not null,
+            "child"                varchar(64) not null,
+            primary key ("parent","child"),
+            foreign key ("parent") references "auth_item" ("name") on delete cascade on update cascade,
+            foreign key ("child") references "auth_item" ("name") on delete cascade on update cascade
+            );            
+        ');
+
+        $this->execute('
+            create table "auth_assignment"
+            (
+            "item_name"            varchar(64) not null,
+            "user_id"              varchar(64) not null,
+            "created_at"           integer,
+            primary key ("item_name","user_id"),
+            foreign key ("item_name") references "auth_item" ("name") on delete cascade on update cascade
+            );
+        ');
+
+        $this->execute('create index auth_assignment_user_id_idx on "auth_assignment" ("user_id");');
     }
 
     public function down()
