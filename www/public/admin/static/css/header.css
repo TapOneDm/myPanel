@@ -1,0 +1,85 @@
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+
+}
+
+.header-content .header-left {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+.header-content .header-left .header-button-toggle {
+    cursor: pointer;
+    border-top: 3px solid var(--sidebar-color);
+    width: 30px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: opacity 0.3s;
+}
+.header-content .header-left .header-button-toggle:hover {
+    opacity: 0.7;
+}
+.header-content .header-left .header-button-toggle span {
+    display: block;
+    width: 70%;
+    height: 3px;
+    background-color: var(--sidebar-color);
+}
+
+.header-content .header-left .header-logo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.header-content .header-left .header-logo img {
+    align-self: flex-start;
+    width: 90px;
+    object-fit: contain;
+}
+
+.header-content .global-search {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-content  i {
+    font-size: 18px;
+}
+.header-content .header-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.header-content .header-items a {
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.header-content .header-items a:hover {
+    opacity: 0.7;
+}
+
+.header-content .header-items .login-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-content .header-items .login-user .user-image {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.header-content .header-items .login-user .user-image img {
+    width: 100%;
+}

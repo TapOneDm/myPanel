@@ -1,0 +1,82 @@
+.sidebar a {
+    color: white;
+    opacity: 0.8;
+}
+
+.sidebar-items ul {
+    transition: all 0.3s;
+    width: 130px;
+    overflow: hidden;
+}
+.sidebar-items ul[class="toggled"] {
+    width: 44px;
+}
+.sidebar-items ul[class="toggled"] li a span {
+    visibility: hidden;
+    display: none;
+    opacity: 0;
+}
+.sidebar-items span {
+    opacity: 0.7;
+    font-size: 14px;
+}
+.sidebar-items ul {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.sidebar-items ul li {
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    padding-left: 0;
+}
+.sidebar-items ul li:hover:not(.dropdown) {
+    cursor: pointer;
+    background-color: var(--main-red-color);
+    border-radius: 6px;
+}
+.sidebar-items ul li a {
+    padding: 4px 10px;
+    opacity: 0.8;
+    width: 100%;
+}
+.sidebar-menu-item a {
+    display: flex;
+    align-items: center;
+}
+.sidebar-menu-item a i + span {
+    padding-left: 8px;
+}
+.sidebar-menu-item a i:first-child {
+    font-size: 14px;
+}
+.sidebar-items ul li.dropdown {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+.sidebar-items ul li.dropdown a span + i {
+    padding-left: 6px;
+}
+.sidebar-items ul li.dropdown-open a span + i {
+    transform: rotate(180deg);
+    padding-right: 6px;
+}
+.sidebar-items ul li.dropdown ul {
+    display: none;
+}
+.sidebar-items .items-nested {
+    padding-left: 4px;
+}
+.sidebar-items .items-nested a i,
+.sidebar-items .items-nested a span {
+    font-size: 12px;
+}
+.sidebar-items ul li.dropdown-open ul {
+    display: block;
+    width: 100%;
+}
+
