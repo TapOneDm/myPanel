@@ -24,7 +24,6 @@ return [
             'enableCookieValidation' => true,
             'enableCsrfValidation' => true,
             'cookieValidationKey' => env('COOKIE_VALIDATION_KEY'),
-    
         ],
         'cache' => [
             'class' => \yii\caching\FileCache::class,
