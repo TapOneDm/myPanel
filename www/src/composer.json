@@ -23,7 +23,8 @@
         "kartik-v/yii2-widget-select2": "@dev",
         "yurkinx/yii2-image": "^1.3",
         "kartik-v/yii2-widget-fileinput": "@dev",
-        "metalguardian/yii2-fotorama-widget": "*"
+        "metalguardian/yii2-fotorama-widget": "*",
+        "yiithings/yii2-dotenv": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

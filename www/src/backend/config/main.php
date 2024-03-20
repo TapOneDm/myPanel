@@ -1,9 +1,7 @@
 <?php
 $params = array_merge(
     require __DIR__ . '/../../common/config/params.php',
-    require __DIR__ . '/../../common/config/params-local.php',
     require __DIR__ . '/params.php',
-    require __DIR__ . '/params-local.php'
 );
 
 return [
@@ -29,18 +27,6 @@ return [
             'allowedIPs' => ['*']
         ]
     ],
-//    'container' => [
-//        'definitions' => [
-//            'yii\widgets\LinkPager' => [
-////                'maxButtonCount' => 3,
-////                'options' => [
-////                    'tag' => 'ul',
-////                    'class' => 'pagination', //pagination-sm
-////                    'prevPageLabel' => 'b'
-////                ],
-//            ],
-//        ],
-//    ],
     'components' => [
         'assetManager' => [
             'basePath' => '../assets',

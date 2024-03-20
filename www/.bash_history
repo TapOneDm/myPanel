@@ -103,3 +103,7 @@ clear
 cd src
 ./yii migrate/create modify_user_table
 exit
+cd src/
+composer require --prefer-dist yiithings/yii2-dotenv "*"
+composer require --prefer-dist yiithings/yii2-dotenv "*"
+exit

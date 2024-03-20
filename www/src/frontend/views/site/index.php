@@ -2,28 +2,43 @@
 
 /**
  * @var yii\web\View $this
- * @var $blogs
  */
-
-$this->title = 'My Yii Application';
 ?>
-<div class="site-index">
-    <div class="p-5 mb-4 bg-transparent rounded-3">
-        <div class="container-fluid py-5 text-center">
-            <h1 class="display-4">Congratulations!</h1>
-            <p class="fs-5 fw-light">You have successfully created your Yii-powered application.</p>
-            <p><a class="btn btn-lg btn-success" href="https://www.yiiframework.com">Get started with Yii</a></p>
-        </div>
-    </div>
 
-    <div class="body-content">
-
-        <?php foreach ($blogs as $blog) {?>
-            <div class="row">
-                <h3><?= $blog->title ?></h3>
-                <div><?= $blog->text ?></div>
+<div class="container">
+    <div class="banner">
+        <div class="banner-img">
+            <img src="/static/img/banner.jpg" alt="">
+            <div class="banner-img-info">
+                <div class="banner-img-info-label">Since 1996</div>
+                <h2 class="banner-img-info-text">True. Fontanka.<br>Underground.</h2>
             </div>
-        <?php }?>
-
+        </div>
+        <div class="banner-tabs tabs">
+            <div class="tabs-nav">
+                <button class="tabs-nav-bnt active" type="button" data-tab="#tab1">Ближайшие</button>
+                <button class="tabs-nav-bnt" type="button" data-tab="#tab2">Скоро</button>
+            </div>
+            <div class="tabs-content">
+                <div id="tab1" class="tabs-item active">
+                    <div class="banner-tab-content-cards">
+                        <?php for ($i = 1; $i < 5; $i++) { ?>
+                            <a href="#" class="content-card">
+                                <img src="<?= "/static/img/tabs/$i.jpg" ?>" alt="">
+                            </a>
+                        <?php } ?>
+                    </div>
+                </div>
+                <div id="tab2" class="tabs-item">
+                    <div class="banner-tab-content-cards">
+                        <?php for ($i = 4; $i > 0; $i--) { ?>
+                            <a href="#" class="content-card">
+                                <img src="<?= "/static/img/tabs/$i.jpg" ?>" alt="">
+                            </a>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
