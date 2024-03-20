@@ -1,9 +1,10 @@
 .vscode
-/www/public/uploads/
+.env
+/www/public/uploads/images/
 /www/src/.env
 /www/src/yii_test
 /www/src/yii_test.bat
 /www/src/vendor
 /www/src/composer.phar
 /www/.bash_history
-www/src/.vagrant
+/www/src/.vagrant
