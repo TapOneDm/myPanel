@@ -1,7 +1,8 @@
 /www/public/uploads/
+/www/src/.env
+/www/.composer
 /yii_test
 /yii_test.bat
-/www/src/.env
 # phpstorm project files
 .idea
 
