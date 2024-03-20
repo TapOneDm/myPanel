@@ -1,1 +1,1 @@
-Website managering system
+Website managing system. Coming soon
