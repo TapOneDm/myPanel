@@ -1,5 +1,6 @@
 .vscode
 .env
+/www/.composer
 /www/public/uploads/images/
 /www/src/.env
 /www/src/yii_test
