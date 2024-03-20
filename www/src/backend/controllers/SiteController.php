@@ -4,6 +4,8 @@ namespace backend\controllers;
 
 use backend\controllers\base\BaseController;
 use common\models\Blog;
+use common\models\User;
+
 use common\models\File;
 use common\models\LoginForm;
 use Yii;
@@ -25,7 +27,7 @@ class SiteController extends BaseController
         return [
             'access' => [
                 'class' => AccessControl::class,
-                'only' => ['login', 'logout', 'save-wysiwyg-image', 'save-image'],
+                'only' => ['login', 'logout', 'save-wysiwyg-image', 'save-image', 'user'],
                 'rules' => [
                     [
                         'allow' => true,
@@ -182,7 +184,22 @@ class SiteController extends BaseController
 //            return $this->render('error', ['exception' => $exception]);
         }
         return ['error' => true];
-
-
     }
+
+    // public function actionUser()
+    // {
+    //     \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+    //     $model = new User();
+    //     $model->username = 'Admin';
+    //     $model->email = 'admin@gmail.com';
+    //     $model->setPassword('diman1243');
+    //     $model->auth_key = '';
+    //     $model->permissions = ['123'];
+    //     $model->status = User::STATUS_ACTIVE;
+    //     if ($model->save()) {
+    //         return 'yes';
+    //     }
+    //     return $model->getFirstErrors();
+    // }
 }

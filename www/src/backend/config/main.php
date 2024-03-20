@@ -29,7 +29,7 @@ return [
     ],
     'components' => [
         'assetManager' => [
-            'basePath' => '../assets',
+            'basePath' => '../../../www/public/admin/assets',
             'bundles' => [
                 'yii\bootstrap5\BootstrapAsset' => [
                     'js'=>[],
