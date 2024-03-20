@@ -1,20 +1,38 @@
-public/uploads
-www/src/vendor/
-www/src/.env
+/public/uploads/
+/www/src/.env
+/yii_test
+/yii_test.bat
+# phpstorm project files
 .idea
+
+# netbeans project files
+nbproject
 
 # zend studio for eclipse project files
 .buildpath
 .project
 .settings
 
-www/src/composer.phar
+# windows thumbnail cache
+Thumbs.db
 
+# composer vendor dir
+/www/src/vendor
+
+# composer itself is not needed
+composer.phar
+
+# Mac DS_Store Files
+.DS_Store
+
+# phpunit itself is not needed
 phpunit.phar
 # local phpunit config
 /phpunit.xml
-# vagrant runtime
-www/src/.vagrant
 
-www/src/frontend/web/index-test.php
-www/src/backend/web/index-test.php
+# vagrant runtime
+/.vagrant
+
+# ignore generated files
+/www/src/frontend/web/index-test.php
+/www/src/backend/web/index-test.php
