@@ -1,7 +1,7 @@
 /www/public/uploads/
 /yii_test
 /yii_test.bat
-
+/www/src/.env
 # phpstorm project files
 .idea
 
