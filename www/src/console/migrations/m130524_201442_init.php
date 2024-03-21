@@ -81,6 +81,16 @@ class m130524_201442_init extends Migration
         ');
 
         $this->execute('create index auth_assignment_user_id_idx on "auth_assignment" ("user_id");');
+
+        
+        $user = new \common\models\User();
+        $user->username = env('ROOT_USER_USERNAME');
+        $user->email = env('ROOT_USER_EMAIL');
+        $user->setPassword(env('ROOT_USER_PASSWORD'));
+        $user->permissions = ['123'];
+        $user->auth_key = '';
+        $user->status = \common\models\User::STATUS_ACTIVE;
+        $user->save();
     }
 
     public function down()
