@@ -41,18 +41,28 @@ body {
 .btn {
     text-transform: uppercase;
     padding: 15px 30px;
+    background-color: var(--main-orange-color);
     border-radius: var(--main-border-radius);
-    transition: background-color var(--main-transition-speed);
+    transition: opacity var(--main-transition-speed);
 }
 .btn:hover {
-    background-color: var(--main-orange-color);
+    opacity: var(--main-opacity);
 }
 .btn-sm {
     padding: 10px 20px;
 }
 
 .btn-outline {
+    text-transform: uppercase;
+    padding: 15px 30px;
+    background-color: var(--main-orange-color);
+    border-radius: var(--main-border-radius);
+    background-color: transparent;
     border: 2px solid var(--main-orange-color);
+    transition: background-color var(--main-transition-speed);
+}
+.btn-outline:hover {
+    background-color: var(--main-orange-color);
 }
 
 .block:not(:first-child) {

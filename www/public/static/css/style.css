@@ -363,4 +363,46 @@ footer .footer-info * {
 #kitchen-slider-controls .controls-next:hover {
     opacity: var(--main-opacity);
 }
+.kitchen-menu-button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 60px;
+    max-width: fit-content;
+    text-align: center;
+    font-weight: bold;
+}
 
+
+/* events-and-tourists */
+.events-and-tourists {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 44px;
+}
+.events-and-tourists .events-and-tourists-divide-image {
+    max-width: 416px;
+    border-radius: var(--main-border-radius);
+    overflow: hidden;
+}
+.events-and-tourists .events-and-tourists-divide-image img {
+    width: 100%;
+}
+.events-and-tourists .events-and-tourists-info {
+    text-align: center;
+    max-width: 376px;
+    margin-top: 35px;
+}
+.events-and-tourists .events-and-tourists-info .events-and-tourists-info-text p {
+    line-height: 1.3;
+}
+.events-and-tourists .events-and-tourists-info .events-and-tourists-info-text p + p {
+    margin-top: 30px;
+}
+.events-and-tourists .events-and-tourists-info .events-and-tourists-info-text + a {
+    display: block;
+    max-width: 170px;
+    margin: 0 auto;
+    margin-top: 55px;
+    font-weight: bold;
+}

@@ -38,4 +38,5 @@ $slides = [1, 2, 3, 4, 5, 6];
             <?php } ?>
         </div>
     </div>
+    <a href="#" class="kitchen-menu-button btn">Все меню</a>
 </div>

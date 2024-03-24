@@ -21,6 +21,26 @@
         min-width: unset;
     }
 
+
+    .events-and-tourists {
+        flex-direction: column;
+    }
+    .events-and-tourists .events-and-tourists-divide-image,
+    .events-and-tourists .events-and-tourists-info {
+        max-width: unset;
+    }
+    .events-and-tourists .events-and-tourists-divide-image {
+        position: relative;
+        width: 100vw;
+        margin-left: -20px;
+        aspect-ratio: 16 / 9;
+        border-radius: unset;
+    }
+    .events-and-tourists .events-and-tourists-info .events-and-tourists-info-text + a {
+        margin-top: 30px;
+    }
+
+
     .bottom-contacts {
         flex-direction: column;
     }
@@ -31,7 +51,7 @@
         max-width: unset;
     }
     .bottom-contacts .bottom-contacts-map iframe {
-        max-height: 340px;
+        max-height: 240px;
         object-fit: contain;
     }
 
@@ -146,7 +166,9 @@
         width: 30px;
         height: 30px;
     }
-
+    .kitchen-menu-button {
+        margin-top: 40px;
+    }
 
     .bottom-contacts .bottom-contacts-info {
         padding: 30px;

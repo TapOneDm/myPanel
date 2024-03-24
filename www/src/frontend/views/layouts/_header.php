@@ -19,7 +19,7 @@
             </ul>
             <div class="open-layout"></div>
 
-            <a href="#" class="reservation btn btn-outline">Бронирование</a>
+            <a href="#" class="reservation btn-outline">Бронирование</a>
             <div class="toggle-menu">
                 <span></span>
             </div>
