@@ -2,7 +2,12 @@
     display: flex;
     align-items: center;
     border-radius: var(--main-border-radius);
+    border: none;
+    outline: 1px solid var(--main-gray-color);
+    transition: outline 0.3s ease;
+    padding: 4px !important;
 }
+
 .select2 .selection ul {
     display: flex;
     align-items: center;
@@ -10,18 +15,23 @@
 }
 .select2-container--krajee-bs5.select2-container--open:not(.select2-container--disabled) .select2-selection, .select2-container--krajee-bs5:not(.select2-container--disabled) .select2-selection:focus {
     box-shadow: none !important;
-    border: 2px solid var(--main-gray-color);
+    border: none;
+    outline: 1px solid var(--main-black-color)
 }
 .select2-container--krajee-bs5:not(.select2-container--disabled) .select2-dropdown {
     box-shadow: none !important;
-    border: 1px solid var(--main-gray-color);
+    border: none;
+    outline: 1px solid var(--main-black-color)
+
 }
 .select2 .selection ul .select2-selection__clear {
     margin: 0;
     line-height: unset;
     font-size: 20px;
-    margin-top: 4px;
+    margin-top: 1px;
     margin-right: 8px;
+    font-weight: normal;
+    cursor: pointer;
 }
 .s2-togall-select .s2-select-label {
     font-size: 16px;
@@ -62,8 +72,9 @@
 .select2 .selection li.select2-selection__choice {
     background-color: transparent;
     border-radius: var(--main-border-radius);
-    padding: 2px 8px;
-    margin: 4px;
+    padding: 0px 4px;
+    margin: 1px;
+    font-size: 15px;
 }
 .select2 .selection .select2-selection__choice .select2-selection__choice__remove {
     display: block;
@@ -72,4 +83,24 @@
     margin-left: 2px;
     cursor: pointer;
     font-size: 20px;
+}
+
+.select2-container--krajee-bs5 .select2-selection--multiple {
+    min-height: min-content !important;
+    padding: 0px 4px;
+}
+
+.has-success .select2-container--open .select2-selection,
+.has-success .select2-container--krajee-bs5.select2-container--focus .select2-selection {
+    border-color: unset !important;
+    box-shadow: none !important;
+}
+
+.select2-container--krajee-bs5 .select2-selection--multiple .select2-selection__rendered {
+    line-height: 1 !important;
+}
+
+.has-error .select2-container--open .select2-selection, .has-error .select2-container--krajee-bs5.select2-container--focus .select2-selection {
+    border: unset !important;
+    box-shadow: none !important;
 }

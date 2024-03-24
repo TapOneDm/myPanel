@@ -83,8 +83,17 @@ class UserController extends Controller
 
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
-
+        $model = $this->findModel($id);
+        if ($model->status === User::STATUS_ACTIVE || $model->status === User::STATUS_INACTIVE) {
+            $model->status = User::STATUS_DELETED;
+            if ($model->validate()) {
+                $model->save();   
+            } else {
+                var_dump($model->getFirstErrors());exit;
+            }
+        } else {
+            $model->delete();
+        }
         return $this->redirect(['index']);
     }
 

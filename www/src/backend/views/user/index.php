@@ -49,7 +49,20 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'username',
             'email:email',
-            'status',
+            [
+                'label' => 'Status',
+                'attribute' => 'status',
+                'filter' => false,
+                'value' => fn ($model) => $model->getStatus(),
+                'contentOptions' => function($model) {
+                    return ['style' => match($model->status) {
+                        User::STATUS_ACTIVE => 'color: green;',
+                        User::STATUS_INACTIVE => 'color: orange;',
+                        User::STATUS_DELETED => 'color: red;',
+                    },
+                    ];
+                }
+            ],
             [
                 'class' => ActionColumn::class,
                 'headerOptions' => ['class' => 'actions', 'style' => 'width: 10%'],

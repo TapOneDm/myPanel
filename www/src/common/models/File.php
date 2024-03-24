@@ -57,7 +57,7 @@ class File extends \yii\db\ActiveRecord
     public static function getThumb(string|null $image, string $modelDir, string $type)
     {
         if (!isset($image)) {
-            return '';
+            return str_replace('admin.', '', Url::home(true)) . 'admin/static/img/placeholder.jpg';
         }
         return str_replace('admin.', '', Url::home(true)) . 'uploads/images/' . $modelDir . '/' . $type . '/' . $image;
     }

@@ -10,7 +10,8 @@
     --title-font-size: 40px;
     --title-font-size-md: 28px;
     --title-font-size-sm: 20px;
-    --font-size-md: 18px;
+    --sub-title-font-size: 18px;
+    --sub-title-font-size-md: 16px;
     --main-border-radius: 5px;
     --main-padding: 20px;
     --main-transition-speed: 0.3s;
@@ -27,4 +28,13 @@
     --breakpoint-md: 720px;
     --breakpoint-sm: 480px;
     --breakpoint-xs: 360px;
+
+    --block-top-margin: 150px;
+    --block-top-margin-md: 90px;
+
+    --block-title-margin: 80px;
+    --block-title-margin-md: 40px;
+
+    --footer-top-margin: 100px;
+    --footer-top-margin-lg: 50px;
 }

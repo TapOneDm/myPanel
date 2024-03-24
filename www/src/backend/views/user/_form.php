@@ -58,7 +58,7 @@ use common\models\File;
                 'data' => $model->permissionsList,
                 'language' => 'ru',
                 'options' => [
-                    'placeholder' => 'Select permissions ...',
+                    'placeholder' => 'Select access roles ...',
                     'value' => $model->userPermissions
                 ],
                 'pluginOptions' => [
@@ -69,20 +69,8 @@ use common\models\File;
                 ],
             ]) ?>
 
-            <?php if ($this->context->action->id === 'create') {
-                echo $form->field($model, 'passwd')->passwordInput(
-                    [
-                        'disabled' => Yii::$app->user->getId() === $model->id
-                    ]);
-            } ?>
-
-            <?php if ($this->context->action->id === 'update') {?>
-                <?= $form->field($model, 'passwd')->passwordInput(
-                    [
-                        'disabled' => Yii::$app->user->getId() === $model->id
-                    ]) ?>
-                <?= $form->field($model, 'newPasswd')->passwordInput(['disabled' => Yii::$app->user->getId() === $model->id]) ?>
-                <?= $form->field($model, 'confirmPasswd')->passwordInput(['disabled' => Yii::$app->user->getId() === $model->id]) ?>            
+            <?php if ($this->context->action->id === 'create' || (isset($model->id) && Yii::$app->user->getId() === $model->id)) {?>
+                <?= $form->field($model, 'passwd')->passwordInput() ?>
             <?php } ?>
         <div>
     </div>

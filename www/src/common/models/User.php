@@ -25,6 +25,7 @@ use yii\web\UploadedFile;
  * @property integer $updated_at
  * @property string image
  * @property string $password
+ * @property string $passwd
  */
 class User extends ActiveRecord implements IdentityInterface
 {
@@ -59,22 +60,51 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            [['username', 'email', 'passwd', 'newPasswd', 'confirmPasswd'], 'string'],
+            [['username', 'email', 'passwd'], 'string'],
             [['username', 'email', 'permissions'], 'required'],
+            ['passwd', 'required', 'when' => fn ($model) => $model->isNewRecord],
             ['username', 'unique', 'message' => 'User with this username is already exists'],
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_INACTIVE, self::STATUS_DELETED]],
             [['passwd', 'newPasswd', 'confirmPasswd'], 'string', 'max' => 255],
-            [
-                'confirmPasswd',
-                'compare',
-                'compareAttribute' => 'newPasswd',
-                'operator' => '==',
-                'message' => 'Input same password please'
-            ],
+            // [
+            //     'confirmPasswd',
+            //     'compare',
+            //     'compareAttribute' => 'newPasswd',
+            //     'operator' => '==',
+            //     'message' => 'Input same password please'
+            // ],
             [['image'], 'string', 'max' => 100],
             [['file'], 'image'],
         ];
+    }
+
+    public function attributeLabels()
+    {
+        return [
+            'username' => 'Username',
+            'email' => 'Email address',
+            'permissions' => 'Access roles',
+            'passwd' => 'Password',
+        ];
+    }
+
+    public static function getStatusList()
+    {
+        return [
+            static::STATUS_DELETED => 'Deleted',
+            static::STATUS_INACTIVE => 'Inactive',
+            static::STATUS_ACTIVE => 'Active',
+        ];
+    }
+
+    public function getStatus()
+    {
+        return match($this->status) {
+            static::STATUS_DELETED => 'Deleted',
+            static::STATUS_INACTIVE => 'Inactive',
+            static::STATUS_ACTIVE => 'Active',
+        };
     }
 
     public static function findIdentity($id)

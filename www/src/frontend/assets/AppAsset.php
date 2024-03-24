@@ -17,6 +17,7 @@ class AppAsset extends AssetBundle
         'static/css/reset.css',
         'static/css/base.css',
         'static/css/style.css',
+        'static/css/media.css',
     ];
     public $js = [
         'static/js/app.js',
