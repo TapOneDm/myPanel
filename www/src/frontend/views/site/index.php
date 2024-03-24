@@ -6,4 +6,4 @@
 ?>
 
 <?= $this->render('sections/_poster') ?>
-<?= $this->render('sections/_menu') ?>
+<?= $this->render('sections/_kitchen') ?>

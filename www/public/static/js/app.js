@@ -2,6 +2,7 @@ $(document).ready(function() {
     toggleHeaderShadow()
     toggleHeaderNav();
     toggleTabs();
+    initKitchenSlider();
 })
 
 function toggleHeaderShadow() {
@@ -45,4 +46,26 @@ function toggleTabs() {
             currentTab.addClass('active', !currentTab.hasClass('active'))
         })
     })
+}
+
+function initKitchenSlider() {
+    let slider = $('.kitchen-slider'); 
+    if (slider) {
+        tns({
+            container: slider[0],
+            items: 1,
+            slideBy: 'page',
+            autoplay: false,
+            lazyload: true,
+            autoplayButtonOutput: false,
+            controls: true,
+            mouseDrag: true,
+            controlsContainer: "#kitchen-slider-controls",
+            responsive: {
+                991: {
+                    items: 2
+                },
+            }
+        });
+    }
 }

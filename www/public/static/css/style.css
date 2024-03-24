@@ -242,7 +242,7 @@ main {
 
 footer {
     margin-top: var(--footer-top-margin);
-    margin-bottom: var(--footer-bottom-margin);
+    margin-bottom: 25px;
 }
 footer hr {
     height: 1px;
@@ -261,3 +261,106 @@ footer .footer-info {
 footer .footer-info * {
     opacity: var(--main-opacity);
 }
+
+/* kitchen */
+.kitchen {
+    position: relative;
+    z-index: 1;
+}
+.kitchen .tns-outer {
+    margin: 0 50px;
+}
+.kitchen .tns-outer .tns-item {
+    padding: 0 60px;
+}
+.kitchen-slider {
+}
+.kitchen .kitchen-items {
+
+}
+.kitchen .kitchen-items .kitchen-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    transition: opacity var(--main-transition-speed);
+}
+.kitchen .kitchen-items .kitchen-item:hover {
+    opacity: var(--main-opacity);
+}
+.kitchen .kitchen-items .kitchen-item:not(:first-child) {
+    margin-top: 50px;
+}
+.kitchen .kitchen-items .kitchen-item .kitchen-item-image {
+    max-width: 110px;
+    border-radius: var(--main-border-radius);
+    overflow: hidden;
+}
+.kitchen .kitchen-items .kitchen-item .kitchen-item-image img {
+    width: 100%;
+}
+.kitchen .kitchen-items .kitchen-item .kitchen-item-info {
+    position: relative;
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    gap: 16px;
+}
+.kitchen .kitchen-items .kitchen-item .kitchen-item-info .kitchen-item-info-name {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.kitchen .kitchen-items .kitchen-item .kitchen-item-info .kitchen-item-info-portion {
+    color: var(--main-orange-color);
+    font-weight: bold;
+}
+.kitchen .kitchen-items .kitchen-item .kitchen-item-info .kitchen-item-info-description {
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.kitchen .kitchen-items .kitchen-item .kitchen-item-info .kitchen-item-info-price {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border: 2px solid var(--main-orange-color);
+    border-radius: var(--main-border-radius);
+}
+#kitchen-slider-controls {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#kitchen-slider-controls .controls-prev,
+#kitchen-slider-controls .controls-next {
+    cursor: pointer;
+    background-color: var(--main-orange-color);
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: var(--main-border-radius);
+    transition: opacity var(--main-transition-speed);
+}
+#kitchen-slider-controls .controls-prev:hover,
+#kitchen-slider-controls .controls-next:hover {
+    opacity: var(--main-opacity);
+}
+
