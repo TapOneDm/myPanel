@@ -3,6 +3,7 @@ $(document).ready(function() {
     toggleHeaderNav();
     toggleTabs();
     initKitchenSlider();
+    initAccordion();
 })
 
 function toggleHeaderShadow() {
@@ -68,4 +69,24 @@ function initKitchenSlider() {
             }
         });
     }
+}
+
+function initAccordion() {
+    $('.accordion-btn').each(function(_, el) {
+        $(el).on('click', function() {
+            const btn = $(this);
+            const content = $(this).next();
+            
+            if (content.css('maxHeight') !== '0px') {
+                $('.accordion').find('.accordion-btn').each((_, el) => $(el).removeClass('active'))
+                $('.accordion').find('.accordion-content').each((_, el) => $(el).css({'maxHeight': '0px'}))
+            } else {
+                $('.accordion').find('.accordion-btn').each((_, el) => $(el).removeClass('active'))
+                $('.accordion').find('.accordion-content').each((_, el) => $(el).css({'maxHeight': '0px'}))
+
+                content.css({'maxHeight': content.prop('scrollHeight') + 'px'});
+                btn.addClass('active');
+            }
+        })
+    })
 }

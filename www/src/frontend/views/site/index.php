@@ -8,3 +8,4 @@
 <?= $this->render('sections/_poster') ?>
 <?= $this->render('sections/_kitchen') ?>
 <?= $this->render('sections/_banquets-and-tourists') ?>
+<?= $this->render('sections/_party') ?>

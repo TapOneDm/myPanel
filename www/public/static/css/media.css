@@ -40,6 +40,14 @@
         margin-top: 30px;
     }
 
+    .party {
+        gap: 60px;
+    }
+    .party .accordion .accordion-btn {
+        padding: 14px 30px;
+        font-size: var(--sub-title-font-size-md);
+        gap: 160px;
+    }
 
     .bottom-contacts {
         flex-direction: column;
@@ -114,7 +122,12 @@
         max-width: unset;
     }
 
-
+    .party {
+        gap: 30px;
+    }
+    .party .accordion .accordion-btn {
+        gap: 130px;
+    }
 }
 
 @media (max-width: 720px) {
@@ -168,6 +181,18 @@
     }
     .kitchen-menu-button {
         margin-top: 40px;
+    }
+
+    .party {
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+    }
+    .party .accordion .accordion-content li {
+        padding: 10px 30px;
+    }
+    .party-people-guests .party-people-guests-cards {
+        margin-top: 30px;
     }
 
     .bottom-contacts .bottom-contacts-info {
@@ -226,5 +251,14 @@
     
     .poster .poster-img-info h2 {
         font-size: var(--title-font-size-sm);
+    }
+
+    .party-people-guests .party-people-guests-title {
+        font-size: var(--title-font-size-xs);
+    }
+    .party .accordion .accordion-btn {
+        gap: 20px;
+        font-size: 14px;
+
     }
 }

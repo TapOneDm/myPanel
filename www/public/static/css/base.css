@@ -93,6 +93,16 @@ body {
     font-weight: bold;
 }
 
+.accordion .accordion-btn {
+    cursor: pointer;
+}
+
+.accordion .accordion-content {
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
 @media (max-width: 720px) {
     .btn {
         padding: 10px 20px;
