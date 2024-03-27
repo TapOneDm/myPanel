@@ -4,6 +4,8 @@ $(document).ready(function() {
     toggleTabs();
     initKitchenSlider();
     initAccordion();
+    initKitchenModalCard()
+    handleModal()
 })
 
 function toggleHeaderShadow() {
@@ -86,6 +88,24 @@ function initAccordion() {
 
                 content.css({'maxHeight': content.prop('scrollHeight') + 'px'});
                 btn.addClass('active');
+            }
+        })
+    })
+}
+
+function initKitchenModalCard() {
+    $('.kitchen-slide').each((_, el) => {
+        $(el).on('click', (e) => {
+            e.preventDefault()
+            $('.kitchen-modal').parent().fadeIn(300)
+        })
+    })
+}
+function handleModal() {
+    $('.modal').each((_, el) => {
+        $(el).on('click', (e) => {
+            if ($(e.target).hasClass('modal-button-close')) {
+                $(el).parent().fadeOut(300)
             }
         })
     })
